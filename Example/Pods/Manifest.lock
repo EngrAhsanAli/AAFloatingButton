@@ -1,0 +1,16 @@
+PODS:
+  - AAFloatingButton (0.1.0)
+
+DEPENDENCIES:
+  - AAFloatingButton (from `../`)
+
+EXTERNAL SOURCES:
+  AAFloatingButton:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AAFloatingButton: e8f33a00707c56c4b9975e27d943238415a2b2dd
+
+PODFILE CHECKSUM: c7ef13fe195815797ace7bb4568b64568fff02f5
+
+COCOAPODS: 1.5.0

@@ -1,0 +1,6 @@
+framework module AAFloatingButton {
+  umbrella header "AAFloatingButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

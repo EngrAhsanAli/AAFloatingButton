@@ -3,9 +3,4 @@ use_frameworks!
 target 'AAFloatingButton_Example' do
   pod 'AAFloatingButton', :path => '../'
 
-  target 'AAFloatingButton_Tests' do
-    inherit! :search_paths
-
-    pod 'FBSnapshotTestCase' , '~> 2.1.4'
-  end
 end
