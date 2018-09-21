@@ -87,7 +87,7 @@ open class AAFloatingButton: UIButton {
         
         rippleBackgroundView.layer.frame = bounds
         rippleBackgroundView.layer.mask = rippleMask
-        rippleBackgroundView.roundCorners()
+        roundCorners(rippleBackgroundView)
         
     }
 
@@ -155,7 +155,7 @@ extension AAFloatingButton {
         
         self.frame = newFrame
         self.frame = CGRect(x: x, y: y, width: self.frame.height, height: self.frame.height)
-        self.roundCorners()
+        roundCorners(self)
     }
     
     func setRippleView() {
@@ -166,14 +166,8 @@ extension AAFloatingButton {
         
         rippleView.backgroundColor = rippleColor
         rippleView.frame = CGRect(x: x, y: y, width: size, height: size)
-        rippleView.roundCorners()
+        roundCorners(rippleView)
     }
-    
-}
-
-
-// MARK: - Animations of ripple
-fileprivate extension AAFloatingButton {
     
     func reverseRipple(){
         UIView.animate(withDuration: 0.1,
@@ -221,10 +215,7 @@ fileprivate extension AAFloatingButton {
         
     }
     
-}
-
-fileprivate extension UIView {
-    func roundCorners() {
-        layer.cornerRadius = 0.5 * frame.height
+    func roundCorners(_ view: UIView) {
+        view.layer.cornerRadius = 0.5 * view.frame.height
     }
 }
