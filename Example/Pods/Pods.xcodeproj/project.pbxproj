@@ -370,38 +370,6 @@
 			};
 			name = Release;
 		};
-		5B754C2AE95F0760393A3B41731CE0A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF85C9004BE6ADDD091951B53D84DE5B /* AAFloatingButton.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AAFloatingButton/AAFloatingButton-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AAFloatingButton/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AAFloatingButton/AAFloatingButton.modulemap";
-				PRODUCT_MODULE_NAME = AAFloatingButton;
-				PRODUCT_NAME = AAFloatingButton;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		68E6E00ACCD649B87AA1856A7F4E0875 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBCA079AF67EF6CFEFAD6305484ABEE1 /* Pods-AAFloatingButton_Example.debug.xcconfig */;
@@ -437,7 +405,7 @@
 			};
 			name = Debug;
 		};
-		99A5A57C9B7C5A4B0CBF128AE61432E2 /* Release */ = {
+		6907349D334BAF9E96796F81FF7B53C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AF85C9004BE6ADDD091951B53D84DE5B /* AAFloatingButton.xcconfig */;
 			buildSettings = {
@@ -461,15 +429,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		B4A77018E2457BCAEA1ECC522B8E8E64 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -571,6 +537,40 @@
 			};
 			name = Debug;
 		};
+		EF94F4A2F02FBB77FDE68C8BD4657800 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF85C9004BE6ADDD091951B53D84DE5B /* AAFloatingButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AAFloatingButton/AAFloatingButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AAFloatingButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AAFloatingButton/AAFloatingButton.modulemap";
+				PRODUCT_MODULE_NAME = AAFloatingButton;
+				PRODUCT_NAME = AAFloatingButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -595,8 +595,8 @@
 		E7A7FF19D7BEE79F55F3292F3AD6F339 /* Build configuration list for PBXNativeTarget "AAFloatingButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5B754C2AE95F0760393A3B41731CE0A0 /* Debug */,
-				99A5A57C9B7C5A4B0CBF128AE61432E2 /* Release */,
+				6907349D334BAF9E96796F81FF7B53C6 /* Debug */,
+				EF94F4A2F02FBB77FDE68C8BD4657800 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

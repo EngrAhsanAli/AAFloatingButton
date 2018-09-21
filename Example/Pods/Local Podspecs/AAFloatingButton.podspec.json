@@ -19,6 +19,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "swift_version": "4.0",
   "source_files": "AAFloatingButton/Classes/**/*"
 }
