@@ -1,5 +1,5 @@
 PODS:
-  - AAFloatingButton (0.1.0)
+  - AAFloatingButton (1.0)
 
 DEPENDENCIES:
   - AAFloatingButton (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AAFloatingButton: e8f33a00707c56c4b9975e27d943238415a2b2dd
+  AAFloatingButton: 7fcbc7fbcec49efad8c41d8ba3e477d063af1726
 
 PODFILE CHECKSUM: c7ef13fe195815797ace7bb4568b64568fff02f5
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

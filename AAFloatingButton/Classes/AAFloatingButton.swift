@@ -173,7 +173,7 @@ extension AAFloatingButton {
 
 
 // MARK: - Animations of ripple
-extension AAFloatingButton {
+fileprivate extension AAFloatingButton {
     
     func reverseRipple(){
         UIView.animate(withDuration: 0.1,
@@ -223,7 +223,7 @@ extension AAFloatingButton {
     
 }
 
-extension UIView {
+fileprivate extension UIView {
     func roundCorners() {
         layer.cornerRadius = 0.5 * frame.height
     }
