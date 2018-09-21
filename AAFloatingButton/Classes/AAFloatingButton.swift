@@ -8,28 +8,48 @@
 import UIKit
 import QuartzCore
 
-@IBDesignable
+/// AAFloatingButton as UIButton
 open class AAFloatingButton: UIButton {
+
+    let keyPath = "AAFloatingButton"
     
-    public var ripplePercent: Float = 2.0 {
+    let rippleView = UIView()
+    
+    let rippleBackgroundView = UIView()
+    
+    var tempShadowRadius: CGFloat = 0
+    
+    var tempShadowOpacity: Float = 0
+    
+    @IBInspectable public var rippleOverBounds: Bool = false
+    
+    @IBInspectable public var shadowRippleRadius: Float = 1
+    
+    @IBInspectable public var shadowRippleEnable: Bool = true
+    
+    @IBInspectable public var trackTouchLocation: Bool = false
+    
+    @IBInspectable public var buttonBackgroundColor: UIColor = .blue
+    
+    @IBInspectable public var ripplePercent: Float = 2.0 {
         didSet {
-            setupRippleView()
+            setRippleView()
         }
     }
     
-    public var rippleColor: UIColor = UIColor(white: 0.9, alpha: 1) {
+    @IBInspectable public var rippleColor: UIColor = UIColor(white: 0.9, alpha: 1) {
         didSet {
             rippleView.backgroundColor = rippleColor
         }
     }
     
-    public var rippleBackgroundColor: UIColor = UIColor(white: 0.95, alpha: 1) {
+    @IBInspectable public var rippleBackgroundColor: UIColor = UIColor(white: 0.95, alpha: 1) {
         didSet {
             rippleBackgroundView.backgroundColor = rippleBackgroundColor
         }
     }
     
-    private var rippleMask: CAShapeLayer? {
+    var rippleMask: CAShapeLayer? {
         get {
             if !rippleOverBounds {
                 let maskLayer = CAShapeLayer()
@@ -42,22 +62,6 @@ open class AAFloatingButton: UIButton {
         }
     }
     
-    //PROPERTIES RIPPLE EFFECT - USAGE INTERFACE BUILDER
-    @IBInspectable public var rippleOverBounds: Bool = false
-    @IBInspectable public var shadowRippleRadius: Float = 1
-    @IBInspectable public var shadowRippleEnable: Bool = true
-    @IBInspectable public var trackTouchLocation: Bool = false
-    @IBInspectable public var buttonBackgroundColor: UIColor = UIColor(red:0.96, green:0.26, blue:0.21, alpha:1.0) //Red Color Material Design
-    
-    //FOR DESIGN
-    private let rippleView = UIView()
-    private let rippleBackgroundView = UIView()
-    
-    //FOR DATA
-    private var tempShadowRadius: CGFloat = 0
-    private var tempShadowOpacity: Float = 0
-    
-    //MARK: INITIALISERS
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         setup()
@@ -68,31 +72,62 @@ open class AAFloatingButton: UIButton {
         setup()
     }
     
-    init () {
+    init() {
         super.init(frame: .zero)
         setup()
     }
     
-    //MARK: LIFE OF VIEW
     override open func layoutSubviews() {
         super.layoutSubviews()
         
-        setupRippleView()
+        setRippleView()
         
         let oldCenter = rippleView.center
         rippleView.center = oldCenter
         
         rippleBackgroundView.layer.frame = bounds
         rippleBackgroundView.layer.mask = rippleMask
+        rippleBackgroundView.roundCorners()
         
     }
+
+    open override func draw(_ rect: CGRect) {
+        let path = UIBezierPath(ovalIn: rect)
+        buttonBackgroundColor.setFill()
+        path.fill()
+    }
     
-    //MARK: SETUP SimpleFloatingButton
+    override open func beginTracking(_ touch: UITouch, with  event: UIEvent?) -> Bool {
+        if trackTouchLocation {
+            rippleView.center = touch.location(in: self)
+        }
+        showRipple()
+        if shadowRippleEnable {
+            tempShadowRadius = layer.shadowRadius
+            tempShadowOpacity = layer.shadowOpacity
+            addRipple(false)
+        }
+        return super.beginTracking(touch, with: event)
+    }
     
-    //General setup of the view
-    private func setup() {
-        setupViewFrame()
-        setupRippleView()
+    open override func cancelTracking(with event: UIEvent?) {
+        super.cancelTracking(with: event)
+        reverseRipple()
+    }
+    
+    override open func endTracking(_ touch: UITouch?, with  event: UIEvent?) {
+        super.endTracking(touch, with: event)
+        reverseRipple()
+    }
+    
+}
+
+// MARK: - Set frames
+extension AAFloatingButton {
+    
+    func setup() {
+        setFrame()
+        setRippleView()
         rippleBackgroundView.backgroundColor = rippleBackgroundColor
         rippleBackgroundView.frame = bounds
         layer.addSublayer(rippleBackgroundView.layer)
@@ -104,10 +139,8 @@ open class AAFloatingButton: UIButton {
         rippleBackgroundView.alpha = 0
     }
     
-    //Setup the frame view
-    private func setupViewFrame(){
+    func setFrame(){
         
-        //Defaull Value
         var dim: CGFloat = UIScreen.main.bounds.height / 8
         var y: CGFloat = UIScreen.main.bounds.height - dim - 20
         var x: CGFloat = UIScreen.main.bounds.width - dim - 20
@@ -118,117 +151,22 @@ open class AAFloatingButton: UIButton {
             x = UIScreen.main.bounds.width - dim - 20
         }
         
-        
         let newFrame: CGRect = CGRect(x: 0, y: 0, width: dim, height: dim)
         
         self.frame = newFrame
         self.frame = CGRect(x: x, y: y, width: self.frame.height, height: self.frame.height)
-        self.layer.cornerRadius = 0.5 * self.frame.height
+        self.roundCorners()
     }
     
-    //Setup the ripple effect
-    private func setupRippleView() {
+    func setRippleView() {
         
         let size: CGFloat = bounds.width * CGFloat(ripplePercent)
         let x: CGFloat = (bounds.width/2) - (size/2)
         let y: CGFloat = (bounds.height/2) - (size/2)
-        let corner: CGFloat = size/2
         
         rippleView.backgroundColor = rippleColor
         rippleView.frame = CGRect(x: x, y: y, width: size, height: size)
-        rippleView.layer.cornerRadius = corner
-    }
-    
-    //Draw the cross on button
-    
-    open override func draw(_ rect: CGRect) {
-        let path = UIBezierPath(ovalIn: rect)
-        buttonBackgroundColor.setFill()
-        path.fill()
-    }
-    
-    //MARK: Handles Touch Tracking and Animations
-    override open func beginTracking(_ touch: UITouch, with  event: UIEvent?) -> Bool {
-        
-        if trackTouchLocation {
-            rippleView.center = touch.location(in: self)
-        }
-        
-        UIView.animate(withDuration: 0.1,
-                       animations: {
-                        self.rippleBackgroundView.alpha = 1
-        }, completion: nil)
-        
-        rippleView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        
-        UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseOut,
-                       animations: {
-                        self.rippleView.transform = .identity
-        }, completion: nil)
-        
-        if shadowRippleEnable {
-            tempShadowRadius = layer.shadowRadius
-            tempShadowOpacity = layer.shadowOpacity
-            
-            let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
-            shadowAnim.toValue = shadowRippleRadius
-            
-            let opacityAnim = CABasicAnimation(keyPath:"shadowOpacity")
-            opacityAnim.toValue = 1
-            
-            let groupAnim = CAAnimationGroup()
-            groupAnim.duration = 0.7
-            groupAnim.fillMode = kCAFillModeForwards
-            groupAnim.isRemovedOnCompletion = false
-            groupAnim.animations = [shadowAnim, opacityAnim]
-            
-            layer.add(groupAnim, forKey:"shadow")
-        }
-        return super.beginTracking(touch, with: event)
-    }
-    
-    open override func cancelTracking(with event: UIEvent?) {
-        super.cancelTracking(with: event)
-        animateToNormal()
-    }
-    
-    override open func endTracking(_ touch: UITouch?, with  event: UIEvent?) {
-        super.endTracking(touch, with: event)
-        animateToNormal()
-    }
-    
-    private func animateToNormal(){
-        UIView.animate(withDuration: 0.1,
-                       animations: {
-                        self.rippleBackgroundView.alpha = 1
-        },
-                       completion: {(success: Bool) -> () in
-                        UIView.animate(withDuration: 0.6 ,
-                                       animations: {
-                                        self.rippleBackgroundView.alpha = 0
-                        }, completion: nil)
-        }
-        )
-        
-        UIView.animate(withDuration: 0.3, delay: 0,
-                       options: .curveEaseOut,
-                       animations: {
-                        self.rippleView.transform = .identity
-                        
-                        let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
-                        shadowAnim.toValue = self.tempShadowRadius
-                        
-                        let opacityAnim = CABasicAnimation(keyPath:"shadowOpacity")
-                        opacityAnim.toValue = self.tempShadowOpacity
-                        
-                        let groupAnim = CAAnimationGroup()
-                        groupAnim.duration = 0.7
-                        groupAnim.fillMode = kCAFillModeForwards
-                        groupAnim.isRemovedOnCompletion = false
-                        groupAnim.animations = [shadowAnim, opacityAnim]
-                        
-                        self.layer.add(groupAnim, forKey:"shadowBack")
-        }, completion: nil)
+        rippleView.roundCorners()
     }
     
 }

@@ -11,6 +11,7 @@
 		1611C9C193303E7CA73037DC1D078D28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		1BECA2B0A7F11B2304F6100AA1F54C62 /* AAFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62207E5B296BD0EAF6C0580B4F890CBD /* AAFloatingButton.swift */; };
 		202496C7CEFCC902B50463A0120EA5FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		524E7CF521559672003A0564 /* AAFloatingButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E7CF421559672003A0564 /* AAFloatingButton+Helper.swift */; };
 		657E7F8BF6437CD7DF5413239C3BF777 /* Pods-AAFloatingButton_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1912F9A4D476762041A8378268691F8 /* Pods-AAFloatingButton_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B30AF6CB662A1C18996B473806D33F80 /* AAFloatingButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1943824FA6F5F2999B72D4E7EDA7B164 /* AAFloatingButton-dummy.m */; };
 		EE953AD963E34FE3A906BE52A526A364 /* Pods-AAFloatingButton_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0FA9CBC051D8C322AA9C764A66224 /* Pods-AAFloatingButton_Example-dummy.m */; };
@@ -34,6 +35,7 @@
 		21D7C5E01590B72F49BE7A1AEF90F4F7 /* Pods-AAFloatingButton_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AAFloatingButton_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		31FB8611325442366123FC4560ABBBB4 /* AAFloatingButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AAFloatingButton.modulemap; sourceTree = "<group>"; };
 		46905C60E2473EFF1F2F9B8FFF90969C /* Pods-AAFloatingButton_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AAFloatingButton_Example.modulemap"; sourceTree = "<group>"; };
+		524E7CF421559672003A0564 /* AAFloatingButton+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AAFloatingButton+Helper.swift"; sourceTree = "<group>"; };
 		552DB67A017021E8EAFBEA45485ABF3E /* AAFloatingButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AAFloatingButton-prefix.pch"; sourceTree = "<group>"; };
 		5D8272D5D18796F83E3EB828D02EB505 /* Pods-AAFloatingButton_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AAFloatingButton_Example-frameworks.sh"; sourceTree = "<group>"; };
 		620D5AD303D2C9DEDE71FFF1099D3AB2 /* Pods-AAFloatingButton_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AAFloatingButton_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				62207E5B296BD0EAF6C0580B4F890CBD /* AAFloatingButton.swift */,
+				524E7CF421559672003A0564 /* AAFloatingButton+Helper.swift */,
 				FAB9B859300E0DA1A190CE8B8340C399 /* Pod */,
 				B6179CC01E2025DAACE784C3C3137D48 /* Support Files */,
 			);
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B30AF6CB662A1C18996B473806D33F80 /* AAFloatingButton-dummy.m in Sources */,
+				524E7CF521559672003A0564 /* AAFloatingButton+Helper.swift in Sources */,
 				1BECA2B0A7F11B2304F6100AA1F54C62 /* AAFloatingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

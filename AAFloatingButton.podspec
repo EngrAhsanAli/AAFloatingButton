@@ -1,10 +1,9 @@
 Pod::Spec.new do |s|
     s.name             = 'AAFloatingButton'
-    s.version          = '0.1.0'
-    s.summary          = 'AAFloatingButton is a set of animations designed for UIView, UIButton, UIImageView with options in iOS, written in Swift.'
-    
+    s.version          = '1.0'
+    s.summary          = 'AAFloatingButton is floating action button component of material design for iOS.'
     s.description      = <<-DESC
-    AAFloatingButton is a collection of animations and transitions for UIView designed to apply animations on every UIView with options in iOS, written in Swift. It allows various options for animations and parameters to make them unique!
+    AAFloatingButton is floating action button component of material design for iOS. It has ripple effect same as per the material design.
     DESC
     
     s.homepage         = 'https://github.com/EngrAhsanAli/AAFloatingButton'
