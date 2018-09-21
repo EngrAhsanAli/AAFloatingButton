@@ -70,7 +70,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod 'AAFloatingButton', '~> 1.0'
+pod 'AAFloatingButton', '~> 1.1'
 end
 
 ```

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'AAFloatingButton'
-    s.version          = '1.0'
+    s.version          = '1.1'
     s.summary          = 'AAFloatingButton is floating action button component of material design for iOS.'
     s.description      = <<-DESC
     AAFloatingButton is floating action button component of material design for iOS. It has ripple effect same as per the material design.
