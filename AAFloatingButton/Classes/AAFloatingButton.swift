@@ -20,7 +20,7 @@ open class AAFloatingButton: UIButton {
     var tempShadowRadius: CGFloat = 0
     
     var tempShadowOpacity: Float = 0
-    
+        
     @IBInspectable public var rippleOverBounds: Bool = false
     
     @IBInspectable public var shadowRippleRadius: Float = 1
@@ -34,6 +34,17 @@ open class AAFloatingButton: UIButton {
     @IBInspectable public var ripplePercent: Float = 2.0 {
         didSet {
             setRippleView()
+        }
+    }
+    
+    @IBInspectable public var aboveKeyboard: Bool = true {
+        didSet {
+            if aboveKeyboard {
+                addKeyboardListners()
+            }
+            else {
+                removeKeyboardListners()
+            }
         }
     }
     
@@ -77,6 +88,10 @@ open class AAFloatingButton: UIButton {
         setup()
     }
     
+    deinit {
+        removeKeyboardListners()
+    }
+    
     override open func layoutSubviews() {
         super.layoutSubviews()
         
@@ -88,7 +103,6 @@ open class AAFloatingButton: UIButton {
         rippleBackgroundView.layer.frame = bounds
         rippleBackgroundView.layer.mask = rippleMask
         roundCorners(rippleBackgroundView)
-        
     }
 
     open override func draw(_ rect: CGRect) {
@@ -137,6 +151,9 @@ extension AAFloatingButton {
         
         rippleBackgroundView.layer.addSublayer(rippleView.layer)
         rippleBackgroundView.alpha = 0
+        
+        (aboveKeyboard = aboveKeyboard)
+        
     }
     
     func setFrame(){
@@ -144,8 +161,8 @@ extension AAFloatingButton {
         var dim: CGFloat = UIScreen.main.bounds.height / 8
         var y: CGFloat = UIScreen.main.bounds.height - dim - 20
         var x: CGFloat = UIScreen.main.bounds.width - dim - 20
-        
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
+
+        if UIDevice.current.orientation.isLandscape {
             dim = UIScreen.main.bounds.height / 6
             y = UIScreen.main.bounds.height - dim - 20
             x = UIScreen.main.bounds.width - dim - 20
@@ -207,7 +224,7 @@ extension AAFloatingButton {
         
         let groupAnim = CAAnimationGroup()
         groupAnim.duration = 0.7
-        groupAnim.fillMode = kCAFillModeForwards
+        groupAnim.fillMode = CAMediaTimingFillMode.forwards
         groupAnim.isRemovedOnCompletion = false
         groupAnim.animations = [shadowAnim, opacityAnim]
         
@@ -218,4 +235,10 @@ extension AAFloatingButton {
     func roundCorners(_ view: UIView) {
         view.layer.cornerRadius = 0.5 * view.frame.height
     }
+    
+    open func onClick(callback: @escaping (() -> ())) {
+        add(for: .touchUpInside, callback)
+    }
+    
 }
+

@@ -11,6 +11,7 @@
 		549B72F61027D07717832C4A436CD0F8 /* Pods-AAFloatingButton_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1912F9A4D476762041A8378268691F8 /* Pods-AAFloatingButton_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54B7967ED3F8D7EBDF20A880D583891B /* AAFloatingButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1943824FA6F5F2999B72D4E7EDA7B164 /* AAFloatingButton-dummy.m */; };
 		6382CEB3D379E059C30C916DF12C297D /* AAFloatingButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6941E7BB3A4DDB087B71563EF18546DA /* AAFloatingButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0D335C2239B1BE00AB7904 /* AAFloatingButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D335B2239B1BE00AB7904 /* AAFloatingButton+Helper.swift */; };
 		98E63CDB84F9606977655CE911CF03DA /* Pods-AAFloatingButton_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0FA9CBC051D8C322AA9C764A66224 /* Pods-AAFloatingButton_Example-dummy.m */; };
 		DB30BB1273A6F47C90A1BB9D27BD92D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		F47D02B20CFF4FF51CE63B972656A0B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
@@ -29,7 +30,7 @@
 /* Begin PBXFileReference section */
 		048F0461878C6C10E6E61D82F3C26542 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FE0FA9CBC051D8C322AA9C764A66224 /* Pods-AAFloatingButton_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AAFloatingButton_Example-dummy.m"; sourceTree = "<group>"; };
-		13F470B4A46CB5A4FACB763021153EE9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		13F470B4A46CB5A4FACB763021153EE9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1943824FA6F5F2999B72D4E7EDA7B164 /* AAFloatingButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AAFloatingButton-dummy.m"; sourceTree = "<group>"; };
 		21D7C5E01590B72F49BE7A1AEF90F4F7 /* Pods-AAFloatingButton_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AAFloatingButton_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		31FB8611325442366123FC4560ABBBB4 /* AAFloatingButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AAFloatingButton.modulemap; sourceTree = "<group>"; };
@@ -42,15 +43,16 @@
 		6941E7BB3A4DDB087B71563EF18546DA /* AAFloatingButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AAFloatingButton-umbrella.h"; sourceTree = "<group>"; };
 		7A0F0307796596955E944DC6196D353C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A4FCA908BDDCC8CA5054E76BC787676 /* Pods-AAFloatingButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AAFloatingButton_Example.release.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8F0D335B2239B1BE00AB7904 /* AAFloatingButton+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AAFloatingButton+Helper.swift"; path = "AAFloatingButton/Classes/AAFloatingButton+Helper.swift"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1912F9A4D476762041A8378268691F8 /* Pods-AAFloatingButton_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AAFloatingButton_Example-umbrella.h"; sourceTree = "<group>"; };
-		A21B9965D32977B55E37CB19EC81D1EB /* AAFloatingButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AAFloatingButton.framework; path = AAFloatingButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21B9965D32977B55E37CB19EC81D1EB /* AAFloatingButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AAFloatingButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF85C9004BE6ADDD091951B53D84DE5B /* AAFloatingButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AAFloatingButton.xcconfig; sourceTree = "<group>"; };
-		B13D14B8934C94CBD37529551545B2E8 /* AAFloatingButton.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = AAFloatingButton.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B13D14B8934C94CBD37529551545B2E8 /* AAFloatingButton.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = AAFloatingButton.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DBCA079AF67EF6CFEFAD6305484ABEE1 /* Pods-AAFloatingButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AAFloatingButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		EF04F52FD68DB4879A2617CE2250B1E3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EF04F52FD68DB4879A2617CE2250B1E3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EFB510CED6E455A16F09E8423C825B99 /* Pods-AAFloatingButton_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AAFloatingButton_Example-resources.sh"; sourceTree = "<group>"; };
-		F3398488B61F33FDD682D7AD31D7F915 /* Pods_AAFloatingButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AAFloatingButton_Example.framework; path = "Pods-AAFloatingButton_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3398488B61F33FDD682D7AD31D7F915 /* Pods_AAFloatingButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AAFloatingButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				62207E5B296BD0EAF6C0580B4F890CBD /* AAFloatingButton.swift */,
+				8F0D335B2239B1BE00AB7904 /* AAFloatingButton+Helper.swift */,
 				FAB9B859300E0DA1A190CE8B8340C399 /* Pod */,
 				B6179CC01E2025DAACE784C3C3137D48 /* Support Files */,
 			);
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B7967ED3F8D7EBDF20A880D583891B /* AAFloatingButton-dummy.m in Sources */,
+				8F0D335C2239B1BE00AB7904 /* AAFloatingButton+Helper.swift in Sources */,
 				1670953C2178E86EA658382C4131FC54 /* AAFloatingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,8 +468,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -561,8 +564,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
