@@ -11,24 +11,10 @@ import QuartzCore
 /// AAFloatingButton as UIButton
 open class AAFloatingButton: UIButton {
 
-    let keyPath = "AAFloatingButton"
-    
-    let rippleView = UIView()
-    
-    let rippleBackgroundView = UIView()
-    
-    var tempShadowRadius: CGFloat = 0
-    
-    var tempShadowOpacity: Float = 0
-        
     @IBInspectable public var rippleOverBounds: Bool = false
-    
     @IBInspectable public var shadowRippleRadius: Float = 1
-    
     @IBInspectable public var shadowRippleEnable: Bool = true
-    
     @IBInspectable public var trackTouchLocation: Bool = false
-    
     @IBInspectable public var buttonBackgroundColor: UIColor = .blue
     
     @IBInspectable public var ripplePercent: Float = 2.0 {
@@ -72,6 +58,12 @@ open class AAFloatingButton: UIButton {
             }
         }
     }
+    
+    let keyPath = "AAFloatingButton"
+    let rippleView = UIView()
+    let rippleBackgroundView = UIView()
+    var tempShadowRadius: CGFloat = 0
+    var tempShadowOpacity: Float = 0
     
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
